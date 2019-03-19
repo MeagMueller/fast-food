@@ -6,16 +6,37 @@
 // Each meal object should have three properties: sandwichType, fries (true or false), and drinkSize.
 const restaurant = {
     name: "Bob's Burgers",
+    orders: [],
     placeOrder: function (meal) {
+        this.orders.push(meal)
+    },
+    getOrders: function () {
+        return this.orders
     }
 }
 
-const chickenComboMeal = {
+console.log(restaurant)
 
+const chickenComboMeal = {
+    sandwichType: "chicken",
+    fries: true,
+    drinkSize: "medium"
 }
 
+const veggieBurgerComboMeal = {
+    sandwichType: "black bean burger",
+    fries: true,
+    drinkSize: "medium"
+}
+
+const falafelSandwichComboMeal = {
+    sandwichType: "falafel",
+    fries: false,
+    drinkSize: "medium"
+}
 // Place an order
-restaurant.placeOrder()
+restaurant.placeOrder(veggieBurgerComboMeal)
+console.log(restaurant.getOrders())
 
 // Invoke the function to return the list of all orders
 
